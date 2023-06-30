@@ -2,7 +2,6 @@ package com.nguyen.coroutines4.main
 
 import com.nguyen.coroutines4.util.SkipNetworkInterceptor
 import okhttp3.OkHttpClient
-import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
@@ -28,7 +27,7 @@ fun getNetworkService() = service
  */
 interface MainNetwork {
     @GET("next_title.json")
-    fun fetchNextTitle(): Call<String>
+    suspend fun fetchNextTitle(): String
 }
 
 
